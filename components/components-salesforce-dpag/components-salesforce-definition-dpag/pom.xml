@@ -220,7 +220,7 @@
                                 <_dsannotations-options>nocapabilities,norequirements,version;minimum=1.2.0</_dsannotations-options>
                                 <_noee>true</_noee>
                                 <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=1.7))"</Require-Capability>
-                                <Bundle-SymbolicName>org.talend.components.salesforce.definition.lib
+                                <Bundle-SymbolicName>org.talend.components.dpag.salesforce.definition.lib
                                 </Bundle-SymbolicName>
                                 <Bundle-Name>${project.name} lib</Bundle-Name>
                                 <Service-Component>*</Service-Component>
@@ -243,7 +243,7 @@
                                 <_dsannotations-options>nocapabilities,norequirements,version;minimum=1.2.0</_dsannotations-options>
                                 <_noee>true</_noee>
                                 <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=1.7))"</Require-Capability>
-                                <Bundle-SymbolicName>org.talend.components.salesforce.definition</Bundle-SymbolicName>
+                                <Bundle-SymbolicName>org.talend.components.dpag.salesforce.definition</Bundle-SymbolicName>
                                 <Import-Package>
                                     !*internal,
                                     org.talend*,
