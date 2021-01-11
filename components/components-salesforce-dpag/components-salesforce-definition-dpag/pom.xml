@@ -17,7 +17,12 @@
     <description>Definition module of customised Salesforce component family for DPAG.</description>
 
     <properties>
+        <!-- CUSTOMISED: DISABLED
+             It is yet unclear to PS why this exists. The jetty version was anyway messed up by (now also disabled) dependency management definition below.
+             Until it is clear why this is hear, let's redirect to the version defined in BOM. -->
+        <!--
         <jetty.version>9.2.19.v20160908</jetty.version>
+        -->
         <coverage.sonar.reportRoot>${project.basedir}/..</coverage.sonar.reportRoot>
     </properties>
 
@@ -120,6 +125,11 @@
         </dependency>
     </dependencies>
 
+    <!-- CUSTOMISED: DISABLED
+         It's yet unclear to PS why this exists. This invalidates the given jetty references as it is missing version information.
+         We need them for 'mvn eclispe:eclipse'.
+    -->
+    <!--
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -140,6 +150,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    -->
 
     <build>
 

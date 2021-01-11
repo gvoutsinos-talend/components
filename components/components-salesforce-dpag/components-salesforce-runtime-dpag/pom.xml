@@ -188,6 +188,11 @@
 
     </dependencies>
 
+    <!-- CUSTOMISED: DISABLED
+         It's yet unclear to PS why this exists. This invalidates the given jetty references as it is missing version information.
+         We need them for 'mvn eclispe:eclipse'.
+    -->
+    <!--
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -208,6 +213,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    -->
 
     <build>
 
