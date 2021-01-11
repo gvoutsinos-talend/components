@@ -21,10 +21,10 @@
         <module>components-salesforce-integration-dpag</module>
     </modules>
 
+    <!--- CUSTOMISED: DISABLED JAVA CODE COVERAGE PLUGIN -->
+    <!--
     <build>
         <plugins>
-            <!--- CUSTOMISED: DISABLED JAVA CODE COVERAGE PLUGIN -->
-            <!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -72,8 +72,8 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
         </plugins>
     </build>
+    -->
 
 </project>
