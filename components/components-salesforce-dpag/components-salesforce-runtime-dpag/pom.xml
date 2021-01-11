@@ -257,7 +257,7 @@
                                 <_dsannotations-options>nocapabilities,norequirements,version;minimum=1.2.0</_dsannotations-options>
                                 <_noee>true</_noee>
                                 <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=1.7))"</Require-Capability>
-                                <Bundle-SymbolicName>org.talend.components.salesforce.runtime.lib</Bundle-SymbolicName>
+                                <Bundle-SymbolicName>org.talend.components.dpag.salesforce.runtime.lib</Bundle-SymbolicName>
                                 <Bundle-Name>${project.name} lib</Bundle-Name>
                                 <Service-Component>*</Service-Component>
                                 <Bundle-ActivationPolicy>lazy</Bundle-ActivationPolicy>
@@ -279,7 +279,7 @@
                                 <_dsannotations-options>nocapabilities,norequirements,version;minimum=1.2.0</_dsannotations-options>
                                 <_noee>true</_noee>
                                 <Require-Capability>osgi.ee;filter:="(&amp;(osgi.ee=JavaSE)(version=1.7))"</Require-Capability>
-                                <Bundle-SymbolicName>org.talend.components.salesforce.runtime</Bundle-SymbolicName>
+                                <Bundle-SymbolicName>org.talend.components.dpag.salesforce.runtime</Bundle-SymbolicName>
                                 <Import-Package>
                                     !*internal,org.talend*,org.slf4j*,javax.xml.namespace,org.apache.commons*,org.apache.http.*,org.apache.avro.*,org.apache.oltu.oauth2*,org.codehaus.jackson*
                                 </Import-Package>

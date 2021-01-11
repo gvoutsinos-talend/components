@@ -1,7 +1,7 @@
 grammar Soql;
 
 @header {
-package org.talend.components.salesforce.soql.parser;
+package org.talend.components.dpag.salesforce.soql.parser;
 }
 
 // Fragments
