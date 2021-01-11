@@ -8,14 +8,19 @@
         <version>0.27.4</version>
         <relativePath>../../../components-parent/pom.xml</relativePath>
     </parent>
+
+    <artifactId>components-salesforce-definition-dpag</artifactId>
+    <version>100.27.4-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <name>Components - Salesforce Definition DPAG</name>
+    <description>Definition module of customised Salesforce component family for DPAG.</description>
+
     <properties>
         <jetty.version>9.2.19.v20160908</jetty.version>
         <coverage.sonar.reportRoot>${project.basedir}/..</coverage.sonar.reportRoot>
     </properties>
 
-    <name>Components - Salesforce Definition</name>
-    <artifactId>components-salesforce-definition</artifactId>
-    <packaging>bundle</packaging>
     <dependencies>
         <dependency>
             <groupId>org.talend.components</groupId>

@@ -3,11 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.talend.components</groupId>
-    <artifactId>components-salesforce-aggregator</artifactId>
-    <version>0.27.4</version>
-
-    <name>Components - Salesforce Aggregator</name>
+    <artifactId>components-salesforce-aggregator-dpag</artifactId>
+    <version>100.27.4-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <name>Components - Salesforce Aggregator DPAG</name>
+    <description>Module aggregator of customised Salesforce component family for DPAG.</description>
 
     <properties>
         <!-- skip the deployment for this aggregator as it's not necessary -->
@@ -15,13 +16,15 @@
     </properties>
 
     <modules>
-        <module>components-salesforce-definition</module>
-        <module>components-salesforce-runtime</module>
-        <module>components-salesforce-integration</module>
+        <module>components-salesforce-definition-dpag</module>
+        <module>components-salesforce-runtime-dpag</module>
+        <module>components-salesforce-integration-dpag</module>
     </modules>
 
     <build>
         <plugins>
+            <!--- CUSTOMISED: DISABLED JAVA CODE COVERAGE PLUGIN -->
+            <!--
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -39,9 +42,9 @@
                                 <fileSet>
                                     <directory>${project.basedir}</directory>
                                     <includes>
-                                        <include>components-salesforce-definition/target/jacoco.exec</include>
-                                        <include>components-salesforce-runtime/target/jacoco.exec</include>
-                                        <include>components-salesforce-integration/target/jacoco.exec</include>
+                                        <include>components-salesforce-definition-dpag/target/jacoco.exec</include>
+                                        <include>components-salesforce-runtime-dpag/target/jacoco.exec</include>
+                                        <include>components-salesforce-integration-dpag/target/jacoco.exec</include>
                                     </includes>
                                 </fileSet>
                             </fileSets>
@@ -59,9 +62,9 @@
                                 <fileSet>
                                     <directory>${project.basedir}</directory>
                                     <includes>
-                                        <include>components-salesforce-definition/target/jacoco-it.exec</include>
-                                        <include>components-salesforce-runtime/target/jacoco-it.exec</include>
-                                        <include>components-salesforce-integration/target/jacoco-it.exec</include>
+                                        <include>components-salesforce-definition-dpag/target/jacoco-it.exec</include>
+                                        <include>components-salesforce-runtime-dpag/target/jacoco-it.exec</include>
+                                        <include>components-salesforce-integration-dpag/target/jacoco-it.exec</include>
                                     </includes>
                                 </fileSet>
                             </fileSets>
@@ -69,6 +72,7 @@
                     </execution>
                 </executions>
             </plugin>
+            -->
         </plugins>
     </build>
 

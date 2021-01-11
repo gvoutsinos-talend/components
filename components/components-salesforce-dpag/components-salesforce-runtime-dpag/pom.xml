@@ -8,19 +8,24 @@
         <version>0.27.4</version>
         <relativePath>../../../components-parent/pom.xml</relativePath>
     </parent>
+
+    <artifactId>components-salesforce-runtime-dpag</artifactId>
+    <version>100.27.4-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+
+    <name>Components - Salesforce Runtime DPAG</name>
+    <description>Runtime module of customised Salesforce component family for DPAG.</description>
+
     <properties>
         <partner.version>46.0.0</partner.version>
         <coverage.sonar.reportRoot>${project.basedir}/..</coverage.sonar.reportRoot>
     </properties>
 
-    <name>Components - Salesforce Runtime</name>
-    <artifactId>components-salesforce-runtime</artifactId>
-    <packaging>bundle</packaging>
     <dependencies>
         <dependency>
             <groupId>org.talend.components</groupId>
-            <artifactId>components-salesforce-definition</artifactId>
-            <version>${components.version}</version>
+            <artifactId>components-salesforce-definition-dpag</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <dependency>

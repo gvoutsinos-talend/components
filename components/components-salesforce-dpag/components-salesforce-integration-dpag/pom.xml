@@ -9,10 +9,12 @@
         <relativePath>../../../components-parent/pom.xml</relativePath>
     </parent>
 
-    <artifactId>components-salesforce-integration</artifactId>
-
-    <name>Components - Salesforce Integration Tests</name>
+    <artifactId>components-salesforce-integration-dpag</artifactId>
+    <version>100.27.4-SNAPSHOT</version>
     <packaging>jar</packaging>
+
+    <name>Components - Salesforce Integration Tests DPAG</name>
+    <description>Integration tests module of customised Salesforce component family for DPAG.</description>
 
     <properties>
         <!-- skip the deployment for integration tests, not necessary -->
@@ -29,13 +31,13 @@
             refactor the tests, we will remove the runtime dependency -->
         <dependency>
             <groupId>org.talend.components</groupId>
-            <artifactId>components-salesforce-definition</artifactId>
-            <version>${components.version}</version>
+            <artifactId>components-salesforce-definition-dpag</artifactId>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>org.talend.components</groupId>
-            <artifactId>components-salesforce-runtime</artifactId>
-            <version>${components.version}</version>
+            <artifactId>components-salesforce-runtime-dpag</artifactId>
+            <version>${project.version}</version>
         </dependency>
 
         <!-- Tests -->
@@ -165,17 +167,17 @@
                             <artifacts>
                                 <artifact>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>components-salesforce-definition</artifactId>
+                                    <artifactId>components-salesforce-definition-dpag</artifactId>
                                     <classifier>bundle</classifier>
-                                    <version>${components.version}</version>
+                                    <version>${project.version}</version>
                                 </artifact>
                                 <!-- no need at final, but need to refactor the test before removing
                                     it -->
                                 <artifact>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>components-salesforce-runtime</artifactId>
+                                    <artifactId>components-salesforce-runtime-dpag</artifactId>
                                     <classifier>bundle</classifier>
-                                    <version>${components.version}</version>
+                                    <version>${project.version}</version>
                                 </artifact>
                             </artifacts>
                         </configuration>
