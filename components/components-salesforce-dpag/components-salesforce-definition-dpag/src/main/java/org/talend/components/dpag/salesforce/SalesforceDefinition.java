@@ -29,17 +29,17 @@ import org.talend.daikon.sandbox.SandboxedInstance;
 
 public abstract class SalesforceDefinition extends AbstractComponentDefinition {
 
-    protected static final TagImpl SALESFORCE_CLOUD_TAG = new TagImpl("salesforce", CommonTags.CLOUD_TAG);
+    protected static final TagImpl SALESFORCE_CLOUD_TAG = new TagImpl("salesforceDPAG", CommonTags.CLOUD_TAG);
 
-    protected static final TagImpl SALESFORCE_BUSINESS_TAG = new TagImpl("salesforce", CommonTags.BUSINESS_TAG);
+    protected static final TagImpl SALESFORCE_BUSINESS_TAG = new TagImpl("salesforceDPAG", CommonTags.BUSINESS_TAG);
 
     public static final boolean USE_CURRENT_JVM_PROPS = true;
 
-    public static final String RUNTIME_MVN_URL = "mvn:org.talend.components/components-salesforce-runtime";
+    public static final String RUNTIME_MVN_URL = "mvn:org.talend.components/components-salesforce-runtime-dpag";
 
     public static final String RUNTIME_MVN_GROUP_ID = "org.talend.components";
 
-    public static final String RUNTIME_MVN_ARTIFACT_ID = "components-salesforce-runtime";
+    public static final String RUNTIME_MVN_ARTIFACT_ID = "components-salesforce-runtime-dpag";
 
     public static final String DATASTORE_RUNTIME_CLASS = "org.talend.components.dpag.salesforce.runtime.dataprep.SalesforceDatastoreRuntime";
 
@@ -66,7 +66,7 @@ public abstract class SalesforceDefinition extends AbstractComponentDefinition {
 
     @Override
     public String[] getFamilies() {
-        return new String[] { "Business/Salesforce", "Cloud/Salesforce" };
+        return new String[] { "Business/Salesforce DPAG", "Cloud/Salesforce DPAG" };
     }
 
     @SuppressWarnings("unchecked")

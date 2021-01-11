@@ -206,7 +206,8 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                 Object value = input.get(f.pos());
                 Schema.Field se = moduleSchema.getField(f.name());
                 if (se != null) {
-                    if (value != null && !value.toString().isEmpty()) {
+                    if (value != null && (!value.toString().isEmpty()
+                            || (!sprops.preserveEmpty.isFlag(Property.Flags.HIDDEN) && sprops.preserveEmpty.getValue()))) {
                         addSObjectField(so, se.schema(), se.name(), value);
                     } else {
                         if (UPDATE.equals(sprops.outputAction.getValue())) {
@@ -233,7 +234,8 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
             if (se == null) {
                 continue;
             }
-            if (value != null && !"".equals(value.toString())) {
+            if (value != null && (!"".equals(value.toString())
+                    || (!sprops.preserveEmpty.isFlag(Property.Flags.HIDDEN) && sprops.preserveEmpty.getValue()))) {
                 if (referenceFieldsMap != null && referenceFieldsMap.get(se.name()) != null) {
                     Map<String, String> relationMap = referenceFieldsMap.get(se.name());
                     String lookupRelationshipFieldName = relationMap.get("lookupRelationshipFieldName");

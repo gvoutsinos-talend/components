@@ -57,6 +57,8 @@ public class TSalesforceOutputProperties extends SalesforceOutputProperties {
 
     public Property<Boolean> ignoreNull = newBoolean("ignoreNull"); //$NON-NLS-1$
 
+    public Property<Boolean> preserveEmpty = newBoolean("preserveEmpty"); //$NON-NLS-1$
+
     public Property<Boolean> retrieveInsertId = newBoolean("retrieveInsertId"); //$NON-NLS-1$
 
     public Property<Integer> commitLevel = newInteger("commitLevel", 200); //$NON-NLS-1$
@@ -185,6 +187,7 @@ public class TSalesforceOutputProperties extends SalesforceOutputProperties {
         advancedForm.addRow(extendInsert);
         advancedForm.addRow(ceaseForError);
         advancedForm.addRow(ignoreNull);
+        advancedForm.addColumn(preserveEmpty);
         advancedForm.addRow(retrieveInsertId);
         advancedForm.addRow(commitLevel);
         advancedForm.addRow(widget(logFileName).setWidgetType(Widget.FILE_WIDGET_TYPE));
@@ -220,6 +223,8 @@ public class TSalesforceOutputProperties extends SalesforceOutputProperties {
                             || OutputAction.UPSERT.equals(outputAction.getValue())));
             form.getWidget("ignoreNull").setHidden(!(OutputAction.UPDATE.equals(outputAction.getValue())
                     || OutputAction.UPSERT.equals(outputAction.getValue())));
+            form.getWidget("preserveEmpty").setHidden(form.getWidget("ignoreNull").isHidden()
+            		|| !ignoreNull.getValue());
         }
     }
 

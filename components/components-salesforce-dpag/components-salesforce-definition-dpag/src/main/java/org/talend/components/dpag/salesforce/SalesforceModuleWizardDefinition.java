@@ -20,7 +20,7 @@ import org.talend.daikon.definition.DefinitionImageType;
 
 public class SalesforceModuleWizardDefinition extends AbstractComponentWizardDefintion {
 
-    public static final String COMPONENT_WIZARD_NAME = "salesforce.module"; //$NON-NLS-1$
+    public static final String COMPONENT_WIZARD_NAME = "salesforceDPAG.module"; //$NON-NLS-1$
 
     @Override
     public String getName() {

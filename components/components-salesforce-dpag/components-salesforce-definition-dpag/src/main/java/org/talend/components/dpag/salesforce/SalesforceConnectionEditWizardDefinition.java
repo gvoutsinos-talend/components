@@ -14,7 +14,7 @@ package org.talend.components.dpag.salesforce;
 
 public class SalesforceConnectionEditWizardDefinition extends SalesforceConnectionWizardDefinition {
 
-    public static final String COMPONENT_WIZARD_NAME = "salesforce.edit"; //$NON-NLS-1$
+    public static final String COMPONENT_WIZARD_NAME = "salesforceDPAG.edit"; //$NON-NLS-1$
 
     @Override
     public String getName() {

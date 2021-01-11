@@ -25,7 +25,7 @@ import org.talend.daikon.runtime.RuntimeInfo;
 
 public class TSalesforceConnectionDefinition extends SalesforceDefinition {
 
-    public static final String COMPONENT_NAME = "tSalesforceConnection"; //$NON-NLS-1$
+    public static final String COMPONENT_NAME = "tSalesforceConnectionDPAG"; //$NON-NLS-1$
 
     public TSalesforceConnectionDefinition() {
         super(COMPONENT_NAME, ExecutionEngine.DI);

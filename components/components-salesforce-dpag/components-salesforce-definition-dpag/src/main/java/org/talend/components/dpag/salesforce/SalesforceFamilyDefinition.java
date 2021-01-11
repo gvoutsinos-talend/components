@@ -38,9 +38,21 @@ import com.google.auto.service.AutoService;
 @Component(name = Constants.COMPONENT_INSTALLER_PREFIX + SalesforceFamilyDefinition.NAME, service = ComponentInstaller.class)
 public class SalesforceFamilyDefinition extends AbstractComponentFamilyDefinition implements ComponentInstaller {
 
-    public static final String NAME = "Salesforce";
+    public static final String NAME = "SalesforceDPAG";
 
     public SalesforceFamilyDefinition() {
+        super(NAME,
+                // Components
+                new TSalesforceConnectionDefinition(),
+                new TSalesforceOutputDefinition(),
+                // Component wizards
+                new SalesforceConnectionWizardDefinition(),
+                //TODO remove the edit one as it's duplicated
+                new SalesforceConnectionEditWizardDefinition(), 
+                new SalesforceModuleWizardDefinition(),
+                // Datastore, Dataset and the component
+                new SalesforceDatastoreDefinition(), new SalesforceDatasetDefinition(), new SalesforceInputDefinition());
+        /*
         super(NAME,
                 // Components
                 new TSalesforceBulkExecDefinition(), new TSalesforceConnectionDefinition(), new TSalesforceGetDeletedDefinition(),
@@ -54,6 +66,7 @@ public class SalesforceFamilyDefinition extends AbstractComponentFamilyDefinitio
                 new SalesforceModuleWizardDefinition(),
                 // Datastore, Dataset and the component
                 new SalesforceDatastoreDefinition(), new SalesforceDatasetDefinition(), new SalesforceInputDefinition());
+        */
     }
 
     @Override
