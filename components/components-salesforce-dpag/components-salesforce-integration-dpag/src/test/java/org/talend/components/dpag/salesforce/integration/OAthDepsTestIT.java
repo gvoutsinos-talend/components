@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.integration;
+package org.talend.components.dpag.salesforce.integration;
 
 import static org.junit.Assert.fail;
 
@@ -24,8 +24,8 @@ import org.ops4j.pax.exam.spi.reactors.ExamReactorStrategy;
 import org.ops4j.pax.exam.spi.reactors.PerClass;
 import org.talend.components.api.service.ComponentService;
 import org.talend.components.common.test.DisablablePaxExam;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.connection.oauth.SalesforceOAuthConnection;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.connection.oauth.SalesforceOAuthConnection;
 
 @RunWith(DisablablePaxExam.class)
 @ExamReactorStrategy(PerClass.class)

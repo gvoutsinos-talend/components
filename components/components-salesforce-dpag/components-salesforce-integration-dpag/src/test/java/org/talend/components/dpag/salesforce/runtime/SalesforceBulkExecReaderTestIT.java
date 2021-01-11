@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -40,17 +40,17 @@ import org.talend.components.api.component.runtime.Result;
 import org.talend.components.api.component.runtime.Writer;
 import org.talend.components.api.test.ComponentTestUtils;
 import org.talend.components.common.oauth.OAuth2FlowType;
-import org.talend.components.salesforce.SalesforceBulkProperties;
-import org.talend.components.salesforce.SalesforceBulkProperties.Concurrency;
-import org.talend.components.salesforce.SalesforceConnectionModuleProperties;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.SalesforceOutputProperties;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
-import org.talend.components.salesforce.tsalesforcebulkexec.TSalesforceBulkExecProperties;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
-import org.talend.components.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkProperties;
-import org.talend.components.salesforce.tsalesforceoutputbulkexec.TSalesforceOutputBulkExecProperties;
+import org.talend.components.dpag.salesforce.SalesforceBulkProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.SalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.SalesforceBulkProperties.Concurrency;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
+import org.talend.components.dpag.salesforce.tsalesforcebulkexec.TSalesforceBulkExecProperties;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutputbulkexec.TSalesforceOutputBulkExecProperties;
 import org.talend.daikon.properties.presentation.Form;
 import org.talend.daikon.runtime.RuntimeInfo;
 import org.talend.daikon.runtime.RuntimeUtil;

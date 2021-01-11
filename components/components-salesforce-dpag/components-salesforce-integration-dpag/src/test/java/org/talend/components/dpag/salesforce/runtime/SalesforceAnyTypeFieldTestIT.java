@@ -10,7 +10,7 @@
 //  9 rue Pages 92150 Suresnes, France
 //
 //  ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -28,9 +28,9 @@ import org.apache.avro.generic.IndexedRecord;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.avro.AvroUtils;
 import org.talend.daikon.avro.SchemaConstants;
 

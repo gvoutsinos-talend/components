@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.tsalesforceinput;
+package org.talend.components.dpag.salesforce.tsalesforceinput;
 
 import org.apache.avro.Schema;
 import org.apache.avro.SchemaBuilder;
@@ -21,8 +21,8 @@ import org.junit.Test;
 import org.junit.rules.TestRule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.talend.components.salesforce.integration.DisableIfMissingConfig;
-import org.talend.components.salesforce.SalesforceModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceModuleProperties;
+import org.talend.components.dpag.salesforce.integration.DisableIfMissingConfig;
 import org.talend.daikon.properties.ValidationResult;
 
 /**

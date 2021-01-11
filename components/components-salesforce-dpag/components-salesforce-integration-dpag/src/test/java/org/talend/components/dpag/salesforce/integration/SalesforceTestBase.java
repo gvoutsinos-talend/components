@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.integration;
+package org.talend.components.dpag.salesforce.integration;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.junit.Assert.assertEquals;
@@ -45,16 +45,16 @@ import org.talend.components.api.service.ComponentService;
 import org.talend.components.api.service.common.ComponentServiceImpl;
 import org.talend.components.api.service.common.DefinitionRegistry;
 import org.talend.components.api.test.AbstractComponentTest;
-import org.talend.components.salesforce.SalesforceConnectionModuleProperties;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.SalesforceFamilyDefinition;
-import org.talend.components.salesforce.SalesforceModuleProperties;
-import org.talend.components.salesforce.SalesforceOutputProperties.OutputAction;
-import org.talend.components.salesforce.runtime.SalesforceSink;
-import org.talend.components.salesforce.runtime.SalesforceSource;
-import org.talend.components.salesforce.runtime.SalesforceWriteOperation;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.SalesforceFamilyDefinition;
+import org.talend.components.dpag.salesforce.SalesforceModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceOutputProperties.OutputAction;
+import org.talend.components.dpag.salesforce.runtime.SalesforceSink;
+import org.talend.components.dpag.salesforce.runtime.SalesforceSource;
+import org.talend.components.dpag.salesforce.runtime.SalesforceWriteOperation;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.avro.AvroUtils;
 import org.talend.daikon.avro.SchemaConstants;
 import org.talend.daikon.properties.Properties;

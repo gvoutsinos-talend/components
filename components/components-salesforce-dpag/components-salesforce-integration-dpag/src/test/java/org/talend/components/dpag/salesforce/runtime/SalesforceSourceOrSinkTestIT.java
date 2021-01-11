@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.junit.Assert.assertEquals;
 
@@ -22,12 +22,12 @@ import org.junit.Test;
 import org.talend.components.api.component.PropertyPathConnector;
 import org.talend.components.api.container.DefaultComponentRuntimeContainerImpl;
 import org.talend.components.api.container.RuntimeContainer;
-import org.talend.components.salesforce.SalesforceConnectionModuleProperties;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.SalesforceDefinition;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.runtime.common.ConnectionHolder;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.SalesforceDefinition;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.runtime.common.ConnectionHolder;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
 import org.talend.daikon.properties.ValidationResult.Result;
 import org.talend.daikon.runtime.RuntimeInfo;
 import org.talend.daikon.runtime.RuntimeUtil;

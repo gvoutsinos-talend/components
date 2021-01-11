@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.integration;
+package org.talend.components.dpag.salesforce.integration;
 
 import javax.inject.Inject;
 

@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.empty;
@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
-import static org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties.FIELD_SALESFORCE_ID;
+import static org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties.FIELD_SALESFORCE_ID;
 
 import java.io.File;
 import java.io.IOException;
@@ -56,12 +56,12 @@ import org.talend.components.api.component.runtime.Reader;
 import org.talend.components.api.component.runtime.Result;
 import org.talend.components.api.component.runtime.Writer;
 import org.talend.components.api.container.DefaultComponentRuntimeContainerImpl;
-import org.talend.components.salesforce.SalesforceOutputProperties.OutputAction;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputDefinition;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputDefinition;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.SalesforceOutputProperties.OutputAction;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.avro.SchemaConstants;
 
 import com.sforce.ws.util.Base64;

@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -22,8 +22,8 @@ import java.util.Calendar;
 import org.apache.avro.generic.IndexedRecord;
 import org.junit.Test;
 import org.talend.components.api.component.runtime.BoundedReader;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.tsalesforcegetservertimestamp.TSalesforceGetServerTimestampProperties;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.tsalesforcegetservertimestamp.TSalesforceGetServerTimestampProperties;
 
 public class SalesforceServerTimeStampReaderTestIT extends SalesforceTestBase {
 

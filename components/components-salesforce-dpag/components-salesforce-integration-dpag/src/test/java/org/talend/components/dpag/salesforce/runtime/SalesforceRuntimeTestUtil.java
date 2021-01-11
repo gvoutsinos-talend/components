@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,12 +31,12 @@ import org.talend.components.api.component.runtime.Source;
 import org.talend.components.api.component.runtime.SourceOrSink;
 import org.talend.components.api.component.runtime.WriteOperation;
 import org.talend.components.api.component.runtime.Writer;
-import org.talend.components.salesforce.SalesforceBulkProperties.Concurrency;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
-import org.talend.components.salesforce.tsalesforcebulkexec.TSalesforceBulkExecProperties;
-import org.talend.components.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkDefinition;
-import org.talend.components.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.SalesforceBulkProperties.Concurrency;
+import org.talend.components.dpag.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
+import org.talend.components.dpag.salesforce.tsalesforcebulkexec.TSalesforceBulkExecProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceoutputbulk.TSalesforceOutputBulkProperties;
 import org.talend.daikon.properties.ValidationResult;
 
 import com.sforce.soap.partner.DeleteResult;

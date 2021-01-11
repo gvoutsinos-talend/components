@@ -1,4 +1,4 @@
-package org.talend.components.salesforce.dataset;
+package org.talend.components.dpag.salesforce.dataset;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,10 +8,10 @@ import org.junit.Assert;
 import org.junit.ClassRule;
 import org.junit.Test;
 import org.junit.rules.TestRule;
-import org.talend.components.salesforce.integration.DisableIfMissingConfig;
-import org.talend.components.salesforce.dataset.SalesforceDatasetProperties.SourceType;
-import org.talend.components.salesforce.datastore.SalesforceDatastoreProperties;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.dataset.SalesforceDatasetProperties.SourceType;
+import org.talend.components.dpag.salesforce.datastore.SalesforceDatastoreProperties;
+import org.talend.components.dpag.salesforce.integration.DisableIfMissingConfig;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
 
 public class SalesforceDatasetPropertiesTestIT extends SalesforceTestBase {
     @ClassRule

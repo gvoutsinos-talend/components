@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.runtime;
+package org.talend.components.dpag.salesforce.runtime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -29,12 +29,12 @@ import org.junit.Test;
 import org.talend.components.api.component.PropertyPathConnector;
 import org.talend.components.api.component.runtime.BoundedReader;
 import org.talend.components.api.test.ComponentTestUtils;
-import org.talend.components.salesforce.SalesforceConnectionModuleProperties;
-import org.talend.components.salesforce.SalesforceGetDeletedUpdatedProperties;
-import org.talend.components.salesforce.SalesforceOutputProperties;
-import org.talend.components.salesforce.integration.SalesforceTestBase;
-import org.talend.components.salesforce.tsalesforcegetdeleted.TSalesforceGetDeletedProperties;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceGetDeletedUpdatedProperties;
+import org.talend.components.dpag.salesforce.SalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.integration.SalesforceTestBase;
+import org.talend.components.dpag.salesforce.tsalesforcegetdeleted.TSalesforceGetDeletedProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.avro.AvroUtils;
 
 import com.sforce.soap.partner.DeletedRecord;

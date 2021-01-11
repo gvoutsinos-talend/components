@@ -10,7 +10,7 @@
 // 9 rue Pages 92150 Suresnes, France
 //
 // ============================================================================
-package org.talend.components.salesforce.integration;
+package org.talend.components.dpag.salesforce.integration;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertEquals;
@@ -51,20 +51,20 @@ import org.talend.components.api.wizard.ComponentWizardDefinition;
 import org.talend.components.api.wizard.WizardImageType;
 import org.talend.components.api.wizard.WizardNameComparator;
 import org.talend.components.common.CommonTestUtils;
-import org.talend.components.salesforce.SalesforceConnectionProperties;
-import org.talend.components.salesforce.SalesforceConnectionProperties.LoginType;
-import org.talend.components.salesforce.SalesforceConnectionWizardDefinition;
-import org.talend.components.salesforce.SalesforceModuleListProperties;
-import org.talend.components.salesforce.SalesforceModuleProperties;
-import org.talend.components.salesforce.SalesforceOutputProperties.OutputAction;
-import org.talend.components.salesforce.SalesforceUserPasswordProperties;
-import org.talend.components.salesforce.runtime.SalesforceSourceOrSink;
-import org.talend.components.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
-import org.talend.components.salesforce.tsalesforceconnection.TSalesforceConnectionDefinition;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputDefinition;
-import org.talend.components.salesforce.tsalesforceinput.TSalesforceInputProperties;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputDefinition;
-import org.talend.components.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionWizardDefinition;
+import org.talend.components.dpag.salesforce.SalesforceModuleListProperties;
+import org.talend.components.dpag.salesforce.SalesforceModuleProperties;
+import org.talend.components.dpag.salesforce.SalesforceUserPasswordProperties;
+import org.talend.components.dpag.salesforce.SalesforceConnectionProperties.LoginType;
+import org.talend.components.dpag.salesforce.SalesforceOutputProperties.OutputAction;
+import org.talend.components.dpag.salesforce.runtime.SalesforceSourceOrSink;
+import org.talend.components.dpag.salesforce.tsalesforcebulkexec.TSalesforceBulkExecDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceconnection.TSalesforceConnectionDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceinput.TSalesforceInputProperties;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputDefinition;
+import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.NamedThing;
 import org.talend.daikon.properties.PresentationItem;
 import org.talend.daikon.properties.Properties;
