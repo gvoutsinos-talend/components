@@ -16,6 +16,7 @@
     </properties>
 
     <modules>
+        <module>components-salesforce-parent-dpag</module>
         <module>components-salesforce-definition-dpag</module>
         <module>components-salesforce-runtime-dpag</module>
         <module>components-salesforce-integration-dpag</module>

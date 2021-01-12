@@ -4,9 +4,9 @@
 
     <parent>
         <groupId>org.talend.components</groupId>
-        <artifactId>components-parent</artifactId>
-        <version>0.27.4</version>
-        <relativePath>../../../components-parent/pom.xml</relativePath>
+        <artifactId>components-salesforce-parent-dpag</artifactId>
+        <version>100.27.4</version>
+        <relativePath>../components-salesforce-parent-dpag/pom.xml</relativePath>
     </parent>
 
     <artifactId>components-salesforce-runtime-dpag</artifactId>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.talend.components</groupId>
+        <artifactId>components-parent</artifactId>
+        <version>0.27.4</version>
+        <relativePath>../../../components-parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>components-salesforce-parent-dpag</artifactId>
+    <version>100.27.4</version>
+    <packaging>pom</packaging>
+    <name>Salesforce DPAG Component Parent</name>
+
+    <properties>
+        <!--
+          *
+          * BUT WHY?
+          *
+          * Because release branch 0.27.3 was not building anymore due to newly introduced access restrictions to
+          * referenced required maven repositories - like Spring. With the changes in branch 0.27.4 on the other
+          * we were able to build... but some referenced versions are missing INSIDE Talend Studio's local maven
+          * repository.
+          *
+          * There had been 3 possible ways to resolve these issues:
+          * 1.) use branch 0.27.3 again and try to re-direct to maven repositories containing the desired deps
+          * 2.) deliver the missing dependency versions for additional deployment into Taled Studio's 7.2.1 maven repo
+          * 3.) redirect the relevant dependencies back to versions already existing inside Talend Studio's 7.2.1 repo
+          *
+          * Going for 1 was uncertain effort.
+          * Going for 2 was uncertain risk due to possible side effects (as it would have included component classes)
+          *     
+          * Hence the decision was to go with 3:
+          * - Use 0.27.4 branch to implement & build the component customisations
+          * - Within customised component use relevant dependency references already existing within Talend Studio 7.2.1
+          *
+         -->
+        <components.version>0.27.3</components.version>
+        <pax-url-aether.version>2.4.7</pax-url-aether.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api</artifactId>
+                <version>${components.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api</artifactId>
+                <version>${components.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api</artifactId>
+                <version>${components.version}</version>
+                <classifier>bundle</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-common</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-common</artifactId>
+                <version>${components.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-common</artifactId>
+                <version>${components.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-osgi</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-osgi</artifactId>
+                <version>${components.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-rest</artifactId>
+                <version>${components.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-rest</artifactId>
+                <version>${components.version}</version>
+                <classifier>lib</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>ch.qos.logback</groupId>
+                        <artifactId>logback-classic</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-api-service-rest</artifactId>
+                <version>${components.version}</version>
+                <type>test-jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-common</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-common</artifactId>
+                <version>${components.version}</version>
+                <classifier>bundle</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-common</artifactId>
+                <version>${components.version}</version>
+                <classifier>tests</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-common-oauth</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-common-oauth</artifactId>
+                <version>${components.version}</version>
+                <classifier>bundle</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.talend.components</groupId>
+                <artifactId>components-osgitest</artifactId>
+                <version>${components.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.ops4j.pax.url</groupId>
+                <artifactId>pax-url-aether</artifactId>
+                <version>${pax-url-aether.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

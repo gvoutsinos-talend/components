@@ -203,6 +203,11 @@ public class TSalesforceOutputProperties extends SalesforceOutputProperties {
         updateOutputSchemas();
     }
 
+    public void afterIgnoreNull() {
+        refreshLayout(getForm(Form.ADVANCED));
+        updateOutputSchemas();
+    }
+
     @Override
     public void afterOutputAction() {
         super.afterOutputAction();
@@ -221,10 +226,10 @@ public class TSalesforceOutputProperties extends SalesforceOutputProperties {
             form.getWidget("retrieveInsertId")
                     .setHidden(extendInsert.getValue() || !(OutputAction.INSERT.equals(outputAction.getValue())
                             || OutputAction.UPSERT.equals(outputAction.getValue())));
-            form.getWidget("ignoreNull").setHidden(!(OutputAction.UPDATE.equals(outputAction.getValue())
-                    || OutputAction.UPSERT.equals(outputAction.getValue())));
-            form.getWidget("preserveEmpty").setHidden(form.getWidget("ignoreNull").isHidden()
-            		|| !ignoreNull.getValue());
+            boolean isNotUP = !(OutputAction.UPDATE.equals(outputAction.getValue())
+                    || OutputAction.UPSERT.equals(outputAction.getValue()));
+            form.getWidget("ignoreNull").setHidden(isNotUP);
+            form.getWidget(preserveEmpty.getName()).setHidden(isNotUP || !ignoreNull.getValue());
         }
     }
 
