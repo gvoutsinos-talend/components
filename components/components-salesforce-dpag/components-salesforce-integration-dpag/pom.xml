@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>components-salesforce-integration-dpag</artifactId>
-    <version>100.27.4-SNAPSHOT</version>
+    <version>100.27.4</version>
     <packaging>jar</packaging>
 
     <name>Components - Salesforce Integration Tests DPAG</name>

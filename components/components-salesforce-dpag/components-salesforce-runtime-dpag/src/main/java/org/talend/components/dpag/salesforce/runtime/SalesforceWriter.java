@@ -208,6 +208,24 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                 if (se != null) {
                     if (value != null && (!value.toString().isEmpty()
                             || (sprops.ignoreNull.getValue() && sprops.preserveEmpty.getValue()))) {
+                        if (value instanceof String && value.toString().isEmpty()) {
+                            //
+                            // WORKAROUND!
+                            //
+                            // Even after adding a preserved empty String to the updated fields, it is
+                            // STILL been ignored and not written... for reasons being located in code
+                            // out of Talend's Salesforce component and hence out of Talend's control.
+                            // Nevertheless, if we pass a whitespace String instead, it is been handled
+                            // and saved as "NULL" value in the corresponding Salesforce field. This
+                            // basically enables the desired behavior not to ignore empty String values
+                            // and overwrite the corresponding field value - if configured to do so.
+                            //
+                            // We check for instanceof String in order to avoid handling of BYTES which
+                            // might result in unwanted side effects when setting them to a whitespace.
+                            // This customization is restricted to String only vlaues.
+                            //
+                            value = " ";
+                        }
                         addSObjectField(so, se.schema(), se.name(), value);
                     } else {
                         if (UPDATE.equals(sprops.outputAction.getValue())) {
@@ -235,7 +253,15 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                 continue;
             }
             if (value != null && (!"".equals(value.toString())
-                    || (!sprops.ignoreNull.getValue() && sprops.preserveEmpty.getValue()))) {
+                    || (sprops.ignoreNull.getValue() && sprops.preserveEmpty.getValue()))) {
+                if (value instanceof String && value.toString().isEmpty()) {
+                    //
+                    // WORKAROUND!
+                    //
+                    // ... see comment in method createSObject(...) above for more information.
+                    //
+                    value = " ";
+                }
                 if (referenceFieldsMap != null && referenceFieldsMap.get(se.name()) != null) {
                     Map<String, String> relationMap = referenceFieldsMap.get(se.name());
                     String lookupRelationshipFieldName = relationMap.get("lookupRelationshipFieldName");

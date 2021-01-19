@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>components-salesforce-runtime-dpag</artifactId>
-    <version>100.27.4-SNAPSHOT</version>
+    <version>100.27.4</version>
     <packaging>bundle</packaging>
 
     <name>Components - Salesforce Runtime DPAG</name>

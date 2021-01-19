@@ -4,7 +4,7 @@
 
     <groupId>org.talend.components</groupId>
     <artifactId>components-salesforce-aggregator-dpag</artifactId>
-    <version>100.27.4-SNAPSHOT</version>
+    <version>100.27.4</version>
     <packaging>pom</packaging>
 
     <name>Components - Salesforce Aggregator DPAG</name>
