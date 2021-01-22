@@ -43,6 +43,7 @@ import org.talend.components.dpag.salesforce.runtime.common.ConnectionHolder;
 import org.talend.components.dpag.salesforce.tsalesforceoutput.TSalesforceOutputProperties;
 import org.talend.daikon.avro.AvroUtils;
 import org.talend.daikon.avro.SchemaConstants;
+import org.talend.daikon.avro.converter.AvroConverter;
 import org.talend.daikon.avro.converter.IndexedRecordConverter;
 import org.talend.daikon.exception.ExceptionContext;
 import org.talend.daikon.exception.error.DefaultErrorCode;
@@ -206,6 +207,8 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                 Object value = input.get(f.pos());
                 Schema.Field se = moduleSchema.getField(f.name());
                 if (se != null) {
+                    LOGGER.debug(String.format("Processing field '%s' isValueNullOrEmpty='%s' ignoreNullEnabled='%s', preserveEmptyEnabled='%s'",
+                            f.name(), value == null || value.toString().isEmpty(), sprops.ignoreNull.getValue(), sprops.preserveEmpty.getValue()));
                     if (value != null && (!value.toString().isEmpty()
                             || (sprops.ignoreNull.getValue() && sprops.preserveEmpty.getValue()))) {
                         if (value instanceof String && value.toString().isEmpty()) {
@@ -227,9 +230,11 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                             value = " ";
                         }
                         addSObjectField(so, se.schema(), se.name(), value);
+                        LOGGER.debug(String.format("... added field '%s' to list of objects to be updated.", f.name()));
                     } else {
                         if (UPDATE.equals(sprops.outputAction.getValue())) {
                             nullValueFields.add(f.name());
+                            LOGGER.debug(String.format("... added field '%s' to null value objects.", f.name()));
                         }
                     }
                 }
@@ -237,6 +242,7 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
         }
         if (!sprops.ignoreNull.getValue()) {
             so.setFieldsToNull(nullValueFields.toArray(new String[0]));
+            LOGGER.debug(String.format("Set fields to null as ignoreNull is not configured '%s'.", nullValueFields));
         }
         return so;
     }
@@ -252,6 +258,8 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
             if (se == null) {
                 continue;
             }
+            LOGGER.debug(String.format("Processing field '%s' isValueNullOrEmpty='%s' ignoreNullEnabled='%s', preserveEmptyEnabled='%s'",
+                    f.name(), value == null || value.toString().isEmpty(), sprops.ignoreNull.getValue(), sprops.preserveEmpty.getValue()));
             if (value != null && (!"".equals(value.toString())
                     || (sprops.ignoreNull.getValue() && sprops.preserveEmpty.getValue()))) {
                 if (value instanceof String && value.toString().isEmpty()) {
@@ -270,6 +278,7 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                     // No need get the real type. Because of the External IDs should not be special type in addSObjectField()
                     addSObjectField(so.getChild(lookupRelationshipFieldName), se.schema(),
                             relationMap.get("lookupFieldExternalIdName"), value);
+                    LOGGER.debug(String.format("... added field '%s' to list of objects to be upserted.", relationMap.get("lookupFieldExternalIdName")));
                 } else {
                     // Skip column "Id" for upsert, when "Id" is not specified as "upsertKeyColumn"
                     if (!"Id".equals(se.name()) || se.name().equals(sprops.upsertKeyColumn.getValue())) {
@@ -277,10 +286,12 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                         if (fieldInModule != null) {
                             // The real type is need in addSObjectField()
                             addSObjectField(so, fieldInModule.schema(), se.name(), value);
+                            LOGGER.debug(String.format("... added field '%s' to list of objects to be upserted.", se.name()));
                         } else {
                             // This is keep old behavior, when set a field which is not exist.
                             // It would throw a exception for this.
                             addSObjectField(so, se.schema(), se.name(), value);
+                            LOGGER.debug(String.format("... added field '%s' to list of objects to be upserted.", se.name()));
                         }
                     }
                 }
@@ -290,14 +301,17 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                     String lookupFieldName = relationMap.get("lookupFieldName");
                     if (lookupFieldName != null && !lookupFieldName.trim().isEmpty()) {
                         nullValueFields.add(lookupFieldName);
+                        LOGGER.debug(String.format("... added field '%s' to null value objects.", lookupFieldName));
                     }
                 } else if (!("Id".equals(se.name()) || se.name().equals(sprops.upsertKeyColumn.getValue()))) {
                     nullValueFields.add(se.name());
+                    LOGGER.debug(String.format("... added field '%s' to null value objects.", se.name()));
                 }
             }
         }
         if (!sprops.ignoreNull.getValue()) {
             so.setFieldsToNull(nullValueFields.toArray(new String[0]));
+            LOGGER.debug(String.format("Set fields to null as ignoreNull is not configured '%s'.", nullValueFields));
         }
         return so;
     }
@@ -341,8 +355,16 @@ final class SalesforceWriter implements WriterWithFeedback<Result, IndexedRecord
                         xmlObject.setField(fieldName, new Time((String) valueToAdd));
                     }
                 } else {
+                    AvroConverter<String, ?> converter = SalesforceAvroRegistry.get().getConverterFromString(se);
+                    LOGGER.trace(String.format("Set String value field '%s' to update/upsert given value", fieldName));
+                    LOGGER.trace(String.format("... value to set is: '%s'", valueToAdd));
+                    LOGGER.trace(String.format("... converted AVRO value is: '%s'", converter.convertToAvro((String) valueToAdd)));
+                    xmlObject.setField(fieldName,
+                            converter.convertToAvro((String) valueToAdd));
+                    /*
                     xmlObject.setField(fieldName,
                             SalesforceAvroRegistry.get().getConverterFromString(se).convertToAvro((String) valueToAdd));
+                    */
                 }
             } else {
                 xmlObject.setField(fieldName, valueToAdd);
