@@ -19,12 +19,13 @@
     <properties>
         <!--
           *
-          * BUT WHY?
+          * WHY DO WE USE VERSION 0.27.4 BUT REFERENCE ARTEFACTS BACK TO VERSION 0.27.3?
           *
           * Because release branch 0.27.3 was not building anymore due to newly introduced access restrictions to
           * referenced required maven repositories - like Spring. With the changes in branch 0.27.4 on the other
-          * we were able to build... but some referenced versions are missing INSIDE Talend Studio's local maven
-          * repository.
+          * hand we were able to build... but the result is not just working within Talend Studio due to the fact
+          * that some of the referenced dependency versions (especially of the component artefacts themselves) are
+          * missing INSIDE Talend Studio's local maven repository within the installation.
           *
           * There had been 3 possible ways to resolve these issues:
           * 1.) use branch 0.27.3 again and try to re-direct to maven repositories containing the desired deps
@@ -33,10 +34,13 @@
           *
           * Going for 1 was uncertain effort.
           * Going for 2 was uncertain risk due to possible side effects (as it would have included component classes)
-          *     
+          *
           * Hence the decision was to go with 3:
-          * - Use 0.27.4 branch to implement & build the component customisations
+          * - Use 0.27.4 branch to implement & build the desired component customisation
           * - Within customised component use relevant dependency references already existing within Talend Studio 7.2.1
+          *
+          * This way we can develop the desired modifications but also build binaries for deployment containing version
+          * references in their metadata which are able to work without any additional prerequisites inside Studio.
           *
          -->
         <components.version>0.27.3</components.version>
